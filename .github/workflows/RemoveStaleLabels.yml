@@ -1,0 +1,24 @@
+name: Remove all 'Stale' labels from issues
+
+on:
+  workflow_dispatch:  # manuell starten
+
+jobs:
+  remove-stale-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install GitHub CLI
+        uses: cli/cli-action@v2
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Remove 'Stale' labels from all issues
+        run: |
+          for issue in $(gh issue list --label "Stale" --limit 1000 --json number -q '.[].number'); do
+            echo "Removing 'Stale' from issue #$issue"
+            gh issue edit $issue --remove-label "Stale"
+          done
