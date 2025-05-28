@@ -1,27 +1,27 @@
-name: 'CloseStaleIssues'
+# name: 'CloseStaleIssues'
 
 # permissions:
 #   issues: write
   
-on: push
+# on: push
 
-jobs:
-  stale:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/stale@v9
-        with:
-          stale-issue-message: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
-          close-issue-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
-          stale-issue-label: 'Stale'
-          exempt-issue-labels: 'ref/IP, ref/NP'
-          days-before-issue-stale: 0
-          days-before-issue-close: 0
-          exempt-all-issue-milestones: true
-          operations-per-run: 5
-          remove-issue-stale-when-updated: true
-          start-date: '2025-05-26'
-          enable-statistics: true
-          # debug-only: true
-          ignore-issue-updates: true
+# jobs:
+#   stale:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/stale@v9
+#         with:
+#           stale-issue-message: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
+#           close-issue-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
+#           stale-issue-label: 'Stale'
+#           exempt-issue-labels: 'ref/IP, ref/NP'
+#           days-before-issue-stale: 0
+#           days-before-issue-close: 0
+#           exempt-all-issue-milestones: true
+#           operations-per-run: 5
+#           remove-issue-stale-when-updated: true
+#           start-date: '2025-05-26'
+#           enable-statistics: true
+#           # debug-only: true
+#           ignore-issue-updates: true
 
