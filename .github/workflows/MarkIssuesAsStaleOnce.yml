@@ -1,7 +1,8 @@
 name: 'Mark all Issues as Stale Once'
 
-on: push
-  # workflow_dispatch:  # Manuell starten
+on: 
+  workflow_dispatch:  # Manuell starten
+  # push
 
 jobs:
   stale-initial:
