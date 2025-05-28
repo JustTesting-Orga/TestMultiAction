@@ -1,7 +1,5 @@
 name: 'CloseStaleIssues'
-on:
-  schedule:
-    - cron: '30 1 * * *'
+on: push
 
 jobs:
   stale:
