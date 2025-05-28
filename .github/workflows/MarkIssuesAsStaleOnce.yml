@@ -1,7 +1,7 @@
 name: 'Mark all Issues as Stale Once'
 
-on:
-  workflow_dispatch:  # Manuell starten
+on: push
+  # workflow_dispatch:  # Manuell starten
 
 jobs:
   stale-initial:
@@ -11,8 +11,8 @@ jobs:
         with:
           stale-issue-message: 'This Issue is marked as stale'
           stale-issue-label: 'stale'
-          days-before-issue-stale: 0  # sofort markieren
-          days-before-issue-close: -1  # nie automatisch schließen
+          days-before-issue-stale: -1  
+          days-before-issue-close: -1 
           operations-per-run: 1000
           remove-issue-stale-when-updated: true
 
