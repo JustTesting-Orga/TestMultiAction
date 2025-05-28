@@ -1,0 +1,16 @@
+name: 'Mark all Issues as Stale Once'
+
+on:
+  workflow_dispatch:  # Manuell starten
+
+jobs:
+  stale-initial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: 'This Issue is marked as stale'
+          stale-issue-label: 'stale'
+          days-before-issue-stale: 0  # sofort markieren
+          days-before-issue-close: -1  # nie automatisch schließen
+          operations-per-run: 1000
