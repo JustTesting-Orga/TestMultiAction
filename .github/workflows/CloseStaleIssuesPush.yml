@@ -23,3 +23,5 @@ jobs:
           start-date: '2025-05-26'
           enable-statistics: true
           # debug-only: true
+          ignore-issue-updates: true
+
