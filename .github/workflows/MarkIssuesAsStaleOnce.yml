@@ -14,3 +14,5 @@ jobs:
           days-before-issue-stale: 0  # sofort markieren
           days-before-issue-close: -1  # nie automatisch schließen
           operations-per-run: 1000
+          remove-issue-stale-when-updated: true
+
