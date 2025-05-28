@@ -1,0 +1,17 @@
+name: 'Close stale Issues'
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  stale-close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          close-issue-message: 'This issue is stale and was closed.'
+          stale-issue-label: 'stale'
+          days-before-issue-stale: -1  # never lable
+          days-before-issue-close: 0   # close immediatly
+          operations-per-run: 30  # around 10 issues with 3 actions 
+          ascending: true
