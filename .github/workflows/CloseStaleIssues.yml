@@ -15,3 +15,6 @@ jobs:
           days-before-issue-close: 0   # close immediatly
           operations-per-run: 30  # around 10 issues with 3 actions 
           ascending: true
+          remove-issue-stale-when-updated: true
+          exempt-issue-labels: 'ref/IP, refNP'
+          exempt-all-issue-milestones: true
