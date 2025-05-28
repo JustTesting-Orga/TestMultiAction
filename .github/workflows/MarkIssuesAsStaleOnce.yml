@@ -15,7 +15,7 @@ jobs:
           days-before-issue-stale: 0  
           days-before-issue-close: -1 
           operations-per-run: 1000
-          remove-issue-stale-when-updated: true
+          # remove-issue-stale-when-updated: true
           exempt-issue-labels: 'ref/IP, refNP'
           exempt-all-issue-milestones: true
 
