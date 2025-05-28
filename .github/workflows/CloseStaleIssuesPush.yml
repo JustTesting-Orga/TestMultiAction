@@ -1,7 +1,7 @@
 name: 'CloseStaleIssues'
 
-permissions:
-  issues: write
+# permissions:
+#   issues: write
   
 on: push
 
@@ -22,4 +22,4 @@ jobs:
           remove-issue-stale-when-updated: true
           start-date: '2025-05-26'
           enable-statistics: true
-          debug-only: true
+          # debug-only: true
