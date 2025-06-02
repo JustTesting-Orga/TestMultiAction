@@ -1,11 +1,11 @@
 name: "Sync Stale Bot Workflow"
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - .github/workflows/MarkAndCloseStaleIssuesPush.yml
-  #   branches: [ main ] 
-  workflow_dispatch: {} 
+ 
 
 jobs:
   replicate:
@@ -19,3 +19,4 @@ jobs:
           patterns_to_ignore: '.github/workflows/SyncStaleBotWorkflow.yml'
           # topics_to_include: icinga
           commit_message: "ci: update workflow action for stale issues"
+          user: JolienTrog
