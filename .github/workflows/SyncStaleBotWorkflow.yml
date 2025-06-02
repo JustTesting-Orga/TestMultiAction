@@ -19,4 +19,3 @@ jobs:
           patterns_to_ignore: '.github/workflows/SyncStaleBotWorkflow.yml'
           # topics_to_include: icinga
           commit_message: "ci: update workflow action for stale issues"
-          user: JolienTrog
