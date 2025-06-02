@@ -21,7 +21,7 @@ jobs:
           exempt-all-issue-milestones: true
           operations-per-run: 100
           remove-issue-stale-when-updated: true
-          start-date: '2025-05-29'
+          start-date: '2025-05-27'
           enable-statistics: true
           ignore-issue-updates: true
           # debug-only: true
