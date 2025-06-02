@@ -23,6 +23,7 @@ jobs:
           remove-issue-stale-when-updated: true
           start-date: '2025-05-29'
           enable-statistics: true
+          # ignore-issue-updates: true
           # debug-only: true
-          ignore-issue-updates: true
+          
 
