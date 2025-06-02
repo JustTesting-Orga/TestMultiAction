@@ -16,7 +16,7 @@ jobs:
           close-issue-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
           stale-issue-label: 'Stale'
           exempt-issue-labels: 'ref/IP, ref/NP'
-          days-before-issue-stale: 1
+          days-before-issue-stale: -1
           days-before-issue-close: 0
           exempt-all-issue-milestones: true
           operations-per-run: 30
