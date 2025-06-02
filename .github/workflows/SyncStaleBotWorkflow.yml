@@ -5,7 +5,7 @@ on:
     paths:
       - .github/workflows/MarkAndCloseStaleIssuesPush.yml
   #   branches: [ main ] 
-  # workflow_dispatch: {} 
+  workflow_dispatch: {} 
 
 jobs:
   replicate:
