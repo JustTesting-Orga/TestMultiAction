@@ -17,7 +17,7 @@ jobs:
           stale-issue-label: 'Stale'
           exempt-issue-labels: 'ref/IP, ref/NP'
           days-before-issue-stale: 0
-          days-before-issue-close: 1
+          days-before-issue-close: 0
           
           exempt-all-issue-milestones: true
           operations-per-run: 100
