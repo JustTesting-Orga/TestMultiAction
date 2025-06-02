@@ -16,7 +16,7 @@ jobs:
         with:
           github_token: ${{ secrets.MULTI_REPO_TOKEN}} # PAT mit Schreibrechten auf alle Ziel-Repos
           patterns_to_include: '.github/workflows/MarkAndCloseStaleIssuesPush.yml'
-          paterns_to_ignore: '.github/workflows/SyncStaleBotWorkflow.yml'
+          patterns_to_ignore: '.github/workflows/SyncStaleBotWorkflow.yml'
           # topics_to_include: icinga
           commit_message: "ci: update workflow action for stale issues"
           
