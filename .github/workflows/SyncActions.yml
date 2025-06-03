@@ -23,8 +23,7 @@ jobs:
           # topics_to_include: icinga
           destination: '.github/workflows'
           commit_message: "ci: update workflow action for stale issues"
-          bot_branch_name: bot/update-files-from-global-repo
-          repos_to_include: IcingaWebDuplicate
+          
       - name: Debug Token Access
         run: |
           echo "Testing repository access..."
