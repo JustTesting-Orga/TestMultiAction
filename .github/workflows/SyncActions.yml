@@ -3,25 +3,30 @@ name: "Sync Actions"
 on:
   push: 
     branches: [ main ]
-  workflow_dispatch: {}
+    paths:
+      - '.github/workflows/**'
+  # workflow_dispatch: {}
   
    
 
 jobs:
-  sync:
+  replicate:
     runs-on: ubuntu-latest
    
     steps:
-      - uses: actions/checkout@v3
-      - name: Manage Files in Multiple Repositories
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Push Action to repos
         uses: derberg/manage-files-in-multiple-repositories@v2
-      # - uses: derberg/manage-files-in-multiple-repositories@v2
+   
         with:
           github_token: ${{ secrets.MULTI_ACCESS_TOKEN }} # PAT mit Schreibrechten auf alle Ziel-Repos
-          patterns_to_include: '.github/workflows/*.yml'
+          patterns_to_include: '.github/workflows/MarkAndCloseStaleIssuesPush.yml'
           patterns_to_ignore: '.github/workflows/SyncActions.yml'
-          # topics_to_include: icinga
-          destination: '.github/workflows'
+          topics_to_include: icinga
+          # destination: '.github/workflows'
+          commiter_username: Sync-Action
           commit_message: "ci: update workflow action for stale issues"
           
       - name: Debug Token Access
