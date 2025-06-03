@@ -26,7 +26,7 @@ jobs:
           patterns_to_ignore: '.github/workflows/SyncActions.yml'
           topics_to_include: icinga
           # destination: '.github/workflows'
-          commiter_username: Sync-Action
+          committer_username: Sync-Action
           commit_message: "ci: update workflow action for stale issues"
           
       - name: Debug Token Access
