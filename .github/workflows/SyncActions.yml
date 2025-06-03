@@ -21,11 +21,16 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
-      - name: Debug Token Access
+      - name: Validate Token
         run: |
-          echo "Testing repository access..."
-          curl -H "Authorization: token ${{ secrets.MULTI_ACCESS_TOKEN }}" \
-                 https://api.github.com/user/repos?visibility=all&affiliation=owner
+          echo "Validating token access..."
+          # Test basic API access
+          curl -f -H "Authorization: token ${{ secrets.MULTI_ACCESS_TOKEN }}" \
+               "https://api.github.com/user" || exit 1
+          
+          # Test org access  
+          curl -f -H "Authorization: token ${{ secrets.MULTI_ACCESS_TOKEN }}" \
+               "https://api.github.com/user/orgs" || exit 1
     
       - name: Checkout
         uses: actions/checkout@v3
