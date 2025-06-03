@@ -8,19 +8,27 @@ on:
    
 
 jobs:
+
+
+  
   replicate_changes:
     runs-on: ubuntu-latest
-    
+   
     steps:
       - uses: actions/checkout@v3
       - name: Manage Files in Multiple Repositories
         uses: derberg/manage-files-in-multiple-repositories@v2
       # - uses: derberg/manage-files-in-multiple-repositories@v2
         with:
-          github_token: ${{ Multi-Repo-Workflow-Token }} # PAT mit Schreibrechten auf alle Ziel-Repos
+          github_token: ${{ MULTI_ACCESS_TOKEN }} # PAT mit Schreibrechten auf alle Ziel-Repos
           patterns_to_include: '.github/workflows'
           patterns_to_ignore: '.github/workflows/SyncActions.yml'
           # topics_to_include: icinga
           destination: '.github/workflows'
           commit_message: "ci: update workflow action for stale issues"
           bot_branch_name: bot/update-files-from-global-repo
+      - name: Debug Token Access
+        run: |
+          echo "Testing repository access..."
+          curl -H "Authorization: token ${{ secrets.MULTI_REPO_TOKEN }}" \
+                 https://api.github.com/user/repos?per_page=1
