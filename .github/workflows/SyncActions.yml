@@ -1,21 +1,24 @@
-name: "Sync Stale Bot Workflow"
+name: "Sync Actions"
 
 on:
-  workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/MarkAndCloseStaleIssuesPush.yml
- 
+  push: 
+    branches: [ main ]
+  workflow_dispatch: {}
+  
+   
 
 jobs:
-  replicate:
+  replicate_changes:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
       - uses: derberg/manage-files-in-multiple-repositories@v2
         with:
           github_token: ${{ secrets.MULTI_REPO_TOKEN }} # PAT mit Schreibrechten auf alle Ziel-Repos
-          patterns_to_include: '.github/workflows/MarkAndCloseStaleIssuesPush.yml'
-          patterns_to_ignore: '.github/workflows/SyncStaleBotWorkflow.yml'
+          patterns_to_include: '.github/workflows'
+          patterns_to_ignore: './github/workflows/SyncAction.yml'
           # topics_to_include: icinga
+          destination: '.github/workflows'
           commit_message: "ci: update workflow action for stale issues"
+          bot_branch_name: bot/update-files-from-global-repo
