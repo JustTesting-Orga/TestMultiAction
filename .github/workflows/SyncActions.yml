@@ -8,10 +8,7 @@ on:
    
 
 jobs:
-
-
-  
-  replicate_changes:
+  sync:
     runs-on: ubuntu-latest
    
     steps:
@@ -21,12 +18,13 @@ jobs:
       # - uses: derberg/manage-files-in-multiple-repositories@v2
         with:
           github_token: ${{ secrets.MULTI_ACCESS_TOKEN }} # PAT mit Schreibrechten auf alle Ziel-Repos
-          patterns_to_include: '.github/workflows'
+          patterns_to_include: '.github/workflows/*.yml'
           patterns_to_ignore: '.github/workflows/SyncActions.yml'
           # topics_to_include: icinga
           destination: '.github/workflows'
           commit_message: "ci: update workflow action for stale issues"
           bot_branch_name: bot/update-files-from-global-repo
+          repos_to_include: IcingaWebDuplicate
       - name: Debug Token Access
         run: |
           echo "Testing repository access..."
