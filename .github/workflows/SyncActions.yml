@@ -1,4 +1,4 @@
-name: "Sync Actions"
+name: Sync Actions
 
 on:
   push: 
@@ -22,8 +22,8 @@ jobs:
    
         with:
           github_token: ${{ secrets.MULTI_ACCESS_TOKEN }} # PAT mit Schreibrechten auf alle Ziel-Repos
-          patterns_to_include: '.github/workflows/MarkAndCloseStaleIssuesPush.yml'
-          patterns_to_ignore: '.github/workflows/SyncActions.yml'
+          patterns_to_include: .github/workflows/MarkAndCloseStaleIssuesPush.yml
+          patterns_to_ignore: .github/workflows/SyncActions.yml
           topics_to_include: icinga
           # destination: '.github/workflows'
           committer_username: Sync-Action
