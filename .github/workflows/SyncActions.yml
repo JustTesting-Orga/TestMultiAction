@@ -8,11 +8,11 @@ permissions:
   pull-requests: write
 
 on:
-  push: 
+  # push: 
     # branches: [ main ]
     # paths:
     #   - '.github/workflows/**'
-  # workflow_dispatch:
+  workflow_dispatch:
   
    
 
