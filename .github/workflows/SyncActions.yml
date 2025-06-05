@@ -1,17 +1,17 @@
 name: Sync Actions
 
-permissions:
-  id-token: write
-  contents: write
-  checks: write
-  issues: write
-  pull-requests: write
+# permissions:
+#   id-token: write
+#   contents: write
+#   checks: write
+#   issues: write
+#   pull-requests: write
 
 on:
-  push: 
-    branches: [ main ]
-    paths:
-      - '.github/workflows/**'
+  # push: 
+  #   branches: [ main ]
+  #   paths:
+  #     - '.github/workflows/**'
   workflow_dispatch:
   
    
@@ -42,13 +42,8 @@ jobs:
           github_token: ${{ secrets.MULTI_ACCESS_TOKEN }} # PAT mit Schreibrechten auf alle Ziel-Repos
           patterns_to_include: .github/workflows/MarkAndCloseStaleIssuesPush.yml
           patterns_to_ignore: .github/workflows/SyncActions.yml
-          topics_to_include: icinga
+          # topics_to_include: icinga
           # destination: '.github/workflows'
           committer_username: Sync-Action
           commit_message: "ci: update workflow action for stale issues"
           
-      - name: Debug Token Access
-        run: |
-          echo "Testing repository access..."
-          curl -H "Authorization: token ${{ secrets.MULTI_ACCESS_TOKEN }}" \
-                 https://api.github.com/user/repos?per_page=1
