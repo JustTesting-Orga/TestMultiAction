@@ -3,8 +3,8 @@ name: 'MarkAndCloseStaleIssues'
 permissions:
   issues: write
   
-on: # push
-  workflow_dispatch:
+on:  push
+  # workflow_dispatch:
 
 jobs:
   stale:
@@ -16,8 +16,8 @@ jobs:
           close-issue-message: 'This issue was closed because it has been stalled for 5 days with no activity.'
           stale-issue-label: 'Stale'
           exempt-issue-labels: 'ref/IP, ref/NP'
-          days-before-issue-stale: 0
-          days-before-issue-close: 0
+          days-before-issue-stale: 1
+          days-before-issue-close: 1
           
           exempt-all-issue-milestones: true
           operations-per-run: 100
