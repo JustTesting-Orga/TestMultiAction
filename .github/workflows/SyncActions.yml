@@ -9,9 +9,9 @@ name: Sync Actions
 
 on:
   push: 
-    branches: [ main ]
-    paths:
-      - '.github/workflows/**'
+    # branches: [ main ]
+    # paths:
+    #   - '.github/workflows/**'
   # workflow_dispatch:
   
    
