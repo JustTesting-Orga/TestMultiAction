@@ -1,11 +1,11 @@
 name: Sync Actions
 
-# permissions:
-#   id-token: write
-#   contents: write
-#   checks: write
-#   issues: write
-#   pull-requests: write
+permissions:
+  id-token: write
+  contents: write
+  checks: write
+  issues: write
+  pull-requests: write
 
 on:
   push: 
